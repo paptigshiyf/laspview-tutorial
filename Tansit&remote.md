@@ -49,7 +49,7 @@ LaspView.exe: Server面板中依次点击（CheckLocalIP）> SendLocalIP > Start
 ```
 [shiyf@storage4 dir]$ Easy.py -s best.arc
 ```
-此时本地端应该可以显示该文件。
+此时本地端应该可以显示该文件。请避免发送过大的文件到本地，目前已经做了一定限制，大概接最大接收1M的文件
 
 > #### 若等待时间>5s
 > 请中止Easy.py并检查网络状况,比如是否曾发送本地IP，是否已经开启监听  
