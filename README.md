@@ -13,7 +13,7 @@ LaspView目前分为三个部分：
 * 中转端/TransitServer.py
 * 远程端/TransitServer.py  
 
-### 安装太长不看版:
+### o. 安装太长不看版:
 * 改```allkey.log```里的```user```
 * ```cp Eas.py 自己目录```
 * 改```Easy.py```中的```USER```
