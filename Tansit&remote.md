@@ -56,12 +56,23 @@ LaspView.exe: Server面板中依次点击（CheckLocalIP）> SendLocalIP > Start
 ```
 LaspView.exe: Server面板中点击SendStructure
 ```
-中转端会将文件记录在```node1:/home/LaspViewTransit/template/$USER/```下
-文件名称是自动生成的，为```{随机数}-{时间}.arc```
-可使用```Easy.py```的```-ls```参数检查```/template/$USER/```目录下的文件:
+中转端会将文件记录在临时目录```node1:/home/LaspViewTransit/template/$USER/```下  
+文件名称是自动生成的，为```{随机数}-{时间}.arc```  
+可使用```Easy.py```的```-ls```参数检查临时目录下的文件:
 ```
 [shiyf@storage4 dir]$ Easy.py -ls
 91990-0328073607.arc   23087-0328071510.arc   36959-0328071510.arc
 ```
-可使用```Easy.py```的```-cp```参数拷贝文件至当前目录
-Ea
+可使用```Easy.py```的```-cp```参数拷贝文件至当前目录  
+```
+[shiyf@storage4 dir]$ Easy.py -cp 91990-0328073607.arc
+cp succeed: 91990-0328073607.arc
+```
+可使用```Easy.py```的```-clear```清理临时目录```/template/$USER/```
+```
+[shiyf@storage4 dir]$ Easy.py -clear
+All file in template is cleared
+```
+
+以上
+> <img src="http://10.158.134.250/shiyf/laspview---guid-and-download//raw/master/Assets/ququ.jpeg" width="20%">  
