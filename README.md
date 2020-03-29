@@ -6,13 +6,20 @@ LaspView是LASP程序包配套的分子结构可视化工具，主要使用Unity
 
 目前仅支持LASP使用的*.arc格式或Material Studio使用的*.car格式
 >使用这种标签的内容可跳过
+>项目源码参见 [此处](http://10.158.134.250/shiyf/laspview)，加入项目后才能看见源码，请喊我
 ## 1. 概述与安装
 LaspView目前分为三个部分：
 * 本地端/Laspview.exe
 * 中转端/TransitServer.py
 * 远程端/TransitServer.py  
 
-### 本地端Laspview.exe
+### 安装太长不看版:
+* 改```allkey.log```里的```user```
+* ```cp Eas.py 自己目录```
+* 改```Easy.py```中的```USER```
+
+
+### a.本地端Laspview.exe
 **本地端提供了3D分子结构的渲染本**  
 仅本地端需要安装在个人主机上，点击链接下载最新版本  
 解压程序包后，请打开```allkey.log```文件:
@@ -29,9 +36,12 @@ user=shiyf
 > 目前，该用户名无需与我组服务器上的用户名一致，但后可能会建立白名单机制，建议与服务器一致  
 
 
-### 中转端TransitServer.py
-目前的架构是在node1上设置了中转服务器，进行文件的转发  
-目录在```node1:/home/LaspViewTransit/```下
+### b.中转端TransitServer.py
+目前的架构是在node1上设置了中转器，进行文件的转发  
+整体上是一个包含简单协程的Server，使用asyncio编写，支持并发  
+目录在```node1:/home/LaspViewTransit/```下  
+> 基本不用管：感觉还算稳定，~~死了喊我~~  
+
 > **远程端发送文件到本地端的流程:**
 >  
 > <img src="http://10.158.134.250/shiyf/laspview---guid-and-download//raw/master/Assets/laspview_1.PNG" width="60%">  
@@ -40,6 +50,21 @@ user=shiyf
 >   
 > <img src="http://10.158.134.250/shiyf/laspview---guid-and-download//raw/master/Assets/laspview_2.PNG" width="60%">  
 
+### c.远程端Easy.py
+使用命令行参数控制发送文件、接收文件、管理中转临时目录```node1:/home/LaspViewTransit/template/$USER```等  
+目录在```/home9/shiyf/bin/Easy.py```，建议cp至自己的.bashrc中的目录中，如
+```
+cp /home9/shiyf/bin/Easy.py /home2/$USER/bin
+```
+并修改用户名```USER```，应与本地端的```allkey.log```一致，如```user="shiyf-desktop"```  
+```
+"""CHANGEABLE PARAMETERS for USER"""
+USER = "shiyf"
+TEMP = './template'
+```
+
 ## 2. 本地端/Laspview.exe 
+
+
 ## 3. 中转端/TransitServer.py
 ## 4. 中转端/TransitServer.py
