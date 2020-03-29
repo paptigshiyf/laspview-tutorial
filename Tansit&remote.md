@@ -1,4 +1,4 @@
-# 中转端TransitServer.py+远程端Easy.py使用指南
+# 3. 中转端TransitServer.py+远程端Easy.py使用指南
 ## 中转端TransitServer.py
 > 整体上不用管，可跳过 ~~（但愿，出问题喊我）~~
 
