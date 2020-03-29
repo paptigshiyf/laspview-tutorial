@@ -4,11 +4,13 @@ LaspView是LASP程序包配套的分子结构可视化工具，主要使用Unity
 * 同一*.arc文件中多个结构的切换
 * 通过远程服务器的命令行发送文件到本地演示或接收文件  
 
-本地端下载: ```/home9/shiyf/LaspViewDownload/```内有最新版本
-
 目前仅支持LASP使用的*.arc格式或Material Studio使用的*.car格式
 >使用这种标签的内容可跳过
 >项目源码参见 [此处](http://10.158.134.250/shiyf/laspview)，加入项目后才能看见源码，请喊我
+
+# 下载
+__本地端下载: ```/home9/shiyf/LaspViewDownload/```内有最新版本__
+
 
 ## 0. 目录
 #### 1. [概述与安装](http://10.158.134.250/shiyf/laspview---guid-and-download/edit/master/README.md)
