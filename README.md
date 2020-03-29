@@ -9,12 +9,10 @@ LaspView是LASP程序包配套的分子结构可视化工具，主要使用Unity
 >项目源码参见 [此处](http://10.158.134.250/shiyf/laspview)，加入项目后才能看见源码，请喊我
 
 ## 0. 目录
-#### 1. 概述与安装
-#### 2. 本地端LaspView.exe使用指南
-#### 3. 中转端TransitServer.py+远程端Easy.py使用指南
-#### 4. 如果遭遇防火墙问题  
-
-
+#### 1. [概述与安装](http://10.158.134.250/shiyf/laspview---guid-and-download/edit/master/README.md)
+#### 2. [本地端LaspView.exe使用指南](http://10.158.134.250/shiyf/laspview---guid-and-download/blob/master/LaspView.exe.md)
+#### 3. [中转端TransitServer.py+远程端Easy.py使用指南](http://10.158.134.250/shiyf/laspview---guid-and-download/blob/master/LaspView.exe.md)
+#### 4. [遭遇防火墙问题](http://10.158.134.250/shiyf/laspview---guid-and-download/blob/master/%23firewall.md)
 
 ## 1. 概述与安装
 LaspView目前分为三个部分：
