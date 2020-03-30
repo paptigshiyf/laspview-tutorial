@@ -17,21 +17,21 @@
 > ##### 硬杀
 > 需要启动进程的用户或root来杀
 > 首先:
-> ```
+> ```Bash
 > [shiyf@node1 LaspViewTransit]$ netstat -lp | grep python
 > ```
 > 或：
-> ```
+> ```Bash
 > [shiyf@node1 LaspViewTransit]$ ps | grep python
 > ```
 > 得到PID， 比如```1553```，再
-> ```
+> ```Bash
 > [shiyf@node1 LaspViewTransit]$ kill -9 1553
 > ```
 > 即可杀掉
 > ##### 软杀
 > 无需登录node1， 使用Easy.py, 假使Easy.py已在$PATH中
-> ```
+> ```Bash
 > [shiyf@storage4 dir]$ Easy.py -kill
 > ```
 > 即会发送信号令TransitServer.py自杀
@@ -65,17 +65,17 @@ LaspView.exe: Server面板中点击SendStructure
 中转端会将文件记录在临时目录```node1:/home/LaspViewTransit/template/$USER/```下  
 文件名称是自动生成的，为```{随机数}-{时间}.arc```  
 可使用```Easy.py```的```-ls```参数检查临时目录下的文件:
-```
+```Bash
 [shiyf@storage4 dir]$ Easy.py -ls
 91990-0328073607.arc   23087-0328071510.arc   36959-0328071510.arc
 ```
 可使用```Easy.py```的```-cp```参数拷贝文件至当前目录  
-```
+```Bash
 [shiyf@storage4 dir]$ Easy.py -cp 91990-0328073607.arc
 cp succeed: 91990-0328073607.arc
 ```
 可使用```Easy.py```的```-clear```清理临时目录```/template/$USER/```
-```
+```Bash
 [shiyf@storage4 dir]$ Easy.py -clear
 All file in template is cleared
 ```
