@@ -45,11 +45,13 @@ LaspView.exe: Server面板中依次点击（CheckLocalIP）> SendLocalIP > Start
 ```
 开启监听后，Windows可能询问是否允许使用网络服务，请选是
 
-其次在shell中执行```Easy.py```, 请保证文件名尾缀```*.arc```，否则收到也不会读取
+其次在shell中执行```Easy.py```,使用```-s```/```--send```参数发送文件。
 ```
 [shiyf@storage4 dir]$ Easy.py -s best.arc
 ```
-此时本地端应该可以显示该文件。请避免发送过大的文件到本地，目前已经做了一定限制，大概接最大接收1M的文件
+此时本地端应该可以显示该文件。  
+请保证文件名尾缀```*.arc```，否则收到也不会读取  
+请避免发送过大的文件到本地，目前已经做了一定限制，大概接最大接收1M的文件
 
 > #### 若等待时间>5s
 > 请中止Easy.py并检查网络状况,比如是否曾发送本地IP，是否已经开启监听  
@@ -58,23 +60,24 @@ LaspView.exe: Server面板中依次点击（CheckLocalIP）> SendLocalIP > Start
 > 目前的python3.6，我没有找到设置连接超时上限的参数，默认的链接超时为1min，也就是说1min后才会报```Connect call failed```
 
 ### 本地发送结构到远程
+可能是最常用的东西，建议记一下各个命令行参数
 本地端将当前结构(目前正在演示的结构，单一结构)发送至中转端:
 ```
 LaspView.exe: Server面板中点击SendStructure
 ```
 中转端会将文件记录在临时目录```node1:/home/LaspViewTransit/template/$USER/```下  
 文件名称是自动生成的，为```{随机数}-{时间}.arc```  
-可使用```Easy.py```的```-ls```参数检查临时目录下的文件:
+可使用```Easy.py```的```-ls```/```--list```参数检查临时目录下的文件:
 ```Bash
 [shiyf@storage4 dir]$ Easy.py -ls
 91990-0328073607.arc   23087-0328071510.arc   36959-0328071510.arc
 ```
-可使用```Easy.py```的```-cp```参数拷贝文件至当前目录  
+可使用```Easy.py```的```-cp```/```--copy```参数拷贝文件至当前目录  
 ```Bash
 [shiyf@storage4 dir]$ Easy.py -cp 91990-0328073607.arc
 cp succeed: 91990-0328073607.arc
 ```
-可使用```Easy.py```的```-clear```清理临时目录```/template/$USER/```
+可使用```Easy.py```的```-clear```/```--clear```清理临时目录```/template/$USER/```
 ```Bash
 [shiyf@storage4 dir]$ Easy.py -clear
 All file in template is cleared
