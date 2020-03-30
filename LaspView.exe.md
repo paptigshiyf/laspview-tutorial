@@ -24,7 +24,7 @@
 | Delete            |  删除选中原子 |
 
 _鼠标左键短摁进行单选，长摁进行框选，拾取方式略有不同_  
-
+> 待添加功能包括：超胞、Ctrl+Z等
 <img src="http://10.158.134.250/shiyf/laspview---guid-and-download//raw/master/Assets/laspview_3.PNG" width="50%">   
 
 ## 工具栏/状态栏
