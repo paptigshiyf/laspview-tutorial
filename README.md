@@ -30,14 +30,20 @@ LaspView目前分为三个部分：
 
 ## a.本地端Laspview.exe
 **本地端提供了3D分子结构的本地渲染演示、动画及编辑**  
-仅本地端需要下载在个人电脑上，双击```LaspView.exe```即可运行程序，应可以看到默认打开的文件
+仅本地端需要下载在个人电脑上，双击```LaspView.exe```即可运行程序，应可以看到默认打开的文件  
 请尝试鼠标右键拖动旋转、中键拖动平移等操作是否顺畅
 
 
 ## b.中转端TransitServer.py
-出于各种原因，目前的架构是在node1上设置了中转服务器，进行文件的转发  
+出于种种考虑，在<kbd>node1</kbd>上架了一个中转服务器进行文件转发。
 整体上是两个包含简单协程的服务端，使用asyncio编写，支持并发  
-目录在```node1:/home/LaspViewTransit/```下  
+目录在<kbd>node1</kbd>```/home/LaspViewTransit/```下  
+文件流的传输如下：  
+* <kbd>工作目录</kbd>发送至<kbd>本地</kbd>:
+    * <kbd>工作目录</kbd>```Easy.py best.arc``` -> <kbd>node1</kbd>的内存 -> <kbd>本地</kbd> ```Temp``` 目录 -> LaspView读取  
+* <kbd>本地</kbd>发送至<kbd>工作目录</kbd>:
+    * <kbd>本地</kbd>-><kbd>node1</kbd> ```Temp```目录-> <kbd>工作目录</kbd>```Easy.py -cl``` -> <kbd>工作目录</kbd>  
+<br></br>
 > 应该还算稳定，一般不用管，~~死了喊我~~  
 
 
