@@ -4,25 +4,31 @@
 #### 3. [中转端TransitServer.py+远程端Easy.py使用指南](http://10.158.134.250/shiyf/laspview---guid-and-download/blob/master/Tansit&remote.md)
 #### 4. [遭遇防火墙问题](http://10.158.134.250/shiyf/laspview---guid-and-download/blob/master/%23firewall.md)
 
-
-|  按钮         |   效果      |
-|  :----:       | :----:    |
-|  LocalIP      | 本地IP，启动时自动读取一次    |
-| ServerIP      |   node1 IP   |
-|CheckLocalIP   |  IP更改后需要更新本地IP，常见于VPN断了重连|
-|SendLocalIP    |  将本地IP发送给中转端|
-|SendStructure  |  将当前帧的结构发送给中转端|
-
 # 三. 网络通信部分  
+## 1. 使用指南
+* 1) 配置
+    - 如需使用网络通信部分，请先在本地端```LaspView.exe```所在目录中修改```LaspViewConsole.log```中的```user```，使其与服务器上的用户名相同，如
+    ```
+    user=shiyf
+    ```
 
-## 1. 本地端
-如需使用网络通信部分，请先在本地端```LaspView.exe```所在目录中修改```LaspViewConsole.log```中的```user```
-```
-user=shiyf
-```
 
-## 2. 中转端
-中转端的启动、停止基本不用管，可跳过 ~~出问题喊我~~
+## 2. 详细内容
+这一部分将详细介绍一些参数和选项，可跳过
+### 1. 本地端
+
+> Server面板的内容如下
+> |  按钮         |   效果      |
+> |  :----:       | :----:    |
+> |  LocalIP      |  本地IP，启动时自动读取一次 |
+> | ServerIP      |   <kbd>node1</kbd> IP   |
+> |CheckLocalIP   |  IP更改后需要更新本地IP，常见于VPN断了重连以后|
+> |StartListening |  开启监听，允许接收结构 |
+> |SendLocalIP    |  将本地IP发送给中转端 |
+> |SendStructure  |  将当前帧的结构发送给中转端 |
+
+### 2. 中转端
+中转端的启动、停止基本不用管， ~~出问题喊我~~
 
 > ### 启动
 > 登录node1并```cd /home/LaspViewTransit/```，```nohup```启动已经写在job.sh内，执行以下命令即可:
