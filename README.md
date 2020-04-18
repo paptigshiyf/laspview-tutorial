@@ -45,7 +45,7 @@ LaspView目前分为三个部分：
 ```
 cp /home9/shiyf/bin/Easy.py /home2/$USER/bin
 ```
-正确配置且防火墙无碍后，在LaspView界面中开启监听，并在Shell的<kbd>工作目录</kbd> 使用如下命令，即可在LaspView中演示结构：
+<b>正确配置</b>且防火墙无碍后，在LaspView界面中开启监听，并在Shell的<kbd>工作目录</kbd> 使用如下命令，即可在LaspView中演示结构：
 ```
 Easy.py best.arc
 ```
