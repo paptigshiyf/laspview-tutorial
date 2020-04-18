@@ -6,26 +6,59 @@
 
 # 三. 网络通信部分  
 ## 1. 使用指南
-* 1) 配置
-    - 如需使用网络通信部分，请先在本地端```LaspView.exe```所在目录中修改```LaspViewConsole.log```中的```user```，使其与服务器上的用户名相同，如
-    ```
-    user=shiyf
-    ```
+### 1) 配置用户
+如需使用网络通信部分，请先在本地端目录中修改```LaspViewConsole.log```中的```user```，使其与服务器上的用户名相同，如
+```
+user=$USER
+```
+并且，将```Easy.py```复制```cp```或者链接```ln -s```到自己的$PATH目录下，source shiyf也行啦
+```
+ln -s /home9/shiyf/bin/Easy.py /home2/$USER/bin
+```
+### 2) 远程发送文件到本地
+* <b>LaspView.exe: <kbd>Server</kbd>面板 点击<kbd>Send Local IP</kbd></b>  
+    - 本地端发送IP给中转端，使中转端知晓本地端的IP地址
+    - 如未断网，操作一次即可
+* <b>LaspView.exe: <kbd>Server</kbd>面板 点击<kbd>Start Listening</kbd></b> 
+    - 开启本地端的监听
+    - 如未断网，操作一次即可
+    - 第一次使用时，Windows可能询问是否允许使用网络服务，请选是
+* <b>Shell：```[shiyf@storage4 dir]$``` ```Easy.py best.arc``` 或 ```Easy.py -s best.arc```</b>
+    - 发送文件到本地，可无限次发送。
+    - 如无网络问题或防火墙问题，LaspView应该已经显示```best.arc```的最后一帧了
+    - 请保证文件名尾缀```*.arc```，否则不会读取  
+    - 请避免发送过大的文件到本地，目前已经做了一定限制，最大接收约1M的文件，否则会罚站/无响应
 
+> * 若等待时间>5s
+>   - 请中止Easy.py并检查网络状况,比如是否曾发送本地IP，是否已经开启监听  
+>   - 其他意外情况请参见 防火墙设置
+>
+> 目前的python3.6，我没有找到设置连接超时上限的参数，默认的链接超时为1min，可能1min后才会报```Connect call failed```
 
+### 3) 本地发送结构到远程
+* <b>LaspView.exe: <kbd>Server</kbd>面板 点击<kbd>Send Structure</kbd></b> 
+    - 发送当前帧的结构
+    - 中转端接收文件写在临时目录<kbd>node1</kbd>```/home/LaspViewTransit/template/$USER/```下  
+    - 文件名称是自动生成的，为```{随机数}-{时间}.arc```
+* <b>Shell：```[shiyf@storage4 dir]$``` ```Easy.py -cl``` 或 ```Easy.py --copylatest```</b>
+    - 将临时目录中，更新时间最新的文件，拉取到当前<kbd>工作目录</kbd>
+    - 可以再```Easy.py *.arc```发回去看看对不对
+
+以上即基本的文件传输操作。
+<br></br><br></br>
 ## 2. 详细内容
-这一部分将详细介绍一些参数和选项，可跳过
-### 1. 本地端
+这一部分将详细介绍一些参数和其他选项，类似于手册。实际上```Easy.py -h```亦有一部分帮助内容
+### 1). 本地端
+Server面板的内容如下  
 
-> Server面板的内容如下
-> |  按钮         |   效果      |
-> |  :----:       | :----:    |
-> |  LocalIP      |  本地IP，启动时自动读取一次 |
-> | ServerIP      |   <kbd>node1</kbd> IP   |
-> |CheckLocalIP   |  IP更改后需要更新本地IP，常见于VPN断了重连以后|
-> |StartListening |  开启监听，允许接收结构 |
-> |SendLocalIP    |  将本地IP发送给中转端 |
-> |SendStructure  |  将当前帧的结构发送给中转端 |
+|  按钮         |   效果      |
+|  :----:       | :----:    |
+|  LocalIP      |  本地IP，启动时自动读取一次 |
+| ServerIP      |   <kbd>node1</kbd> IP   |
+|CheckLocalIP   |  IP更改后需要更新本地IP，常见于VPN断了重连以后|
+|StartListening |  开启监听，允许接收结构 |
+|SendLocalIP    |  将本地IP发送给中转端 |
+|SendStructure  |  将当前帧的结构发送给中转端 |
 
 ### 2. 中转端
 中转端的启动、停止基本不用管， ~~出问题喊我~~
@@ -60,35 +93,8 @@
 
 ## 远程端Easy.py
 包含了一个和中转端通信的client，发送并接收信息。默认Easy.py已在$PATH中
-### Shell命令行发送文件到本地
-首先应使本地端发送本地IP到中转端，并开启本地端的监听:
-```
-LaspView.exe: Server面板中依次点击（CheckLocalIP）> SendLocalIP > StartListening
-```
-开启监听后，Windows可能询问是否允许使用网络服务，请选是
 
-其次在shell中执行```Easy.py```,使用```-s```/```--send```参数发送文件。
-```
-[shiyf@storage4 dir]$ Easy.py -s best.arc
-```
-此时本地端应该可以显示该文件。  
-请保证文件名尾缀```*.arc```，否则收到也不会读取  
-请避免发送过大的文件到本地，目前已经做了一定限制，最大接收约1M的文件
 
-> #### 若等待时间>5s
-> 请中止Easy.py并检查网络状况,比如是否曾发送本地IP，是否已经开启监听  
-> 其他意外情况请参见 防火墙设置
->
-> 目前的python3.6，我没有找到设置连接超时上限的参数，默认的链接超时为1min，也就是说1min后才会报```Connect call failed```
-
-### 本地发送结构到远程
-可能是最常用的东西，建议记一下各个命令行参数
-本地端将当前结构(目前正在演示的结构，单一结构)发送至中转端:
-```
-LaspView.exe: Server面板中点击SendStructure
-```
-中转端会将文件记录在临时目录```node1:/home/LaspViewTransit/template/$USER/```下  
-文件名称是自动生成的，为```{随机数}-{时间}.arc```  
 可使用```Easy.py```的```-ls```/```--list```参数检查临时目录下的文件:
 ```Bash
 [shiyf@storage4 dir]$ Easy.py -ls
