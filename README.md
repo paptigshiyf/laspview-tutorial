@@ -14,32 +14,32 @@ __本地端下载: ```/home9/shiyf/LaspViewDownload/```内有最新版本__
 
 
 # 0. 目录
-#### 1. [概述与安装](http://10.158.134.250/shiyf/laspview---guid-and-download/edit/master/README.md)
-#### 2. [本地端LaspView.exe使用指南](http://10.158.134.250/shiyf/laspview---guid-and-download/blob/master/LaspView.exe.md)
-#### 3. [中转端TransitServer.py+远程端Easy.py使用指南](http://10.158.134.250/shiyf/laspview---guid-and-download/blob/master/Tansit&remote.md)
-#### 4. [遭遇防火墙问题](http://10.158.134.250/shiyf/laspview---guid-and-download/blob/master/%23firewall.md)
+#### 一 [概述与安装](http://10.158.134.250/shiyf/laspview---guid-and-download/edit/master/README.md)
+#### 二 [LaspView使用指南](http://10.158.134.250/shiyf/laspview---guid-and-download/blob/master/LaspView.exe.md)
+#### 三 [网络通信部分使用指南](http://10.158.134.250/shiyf/laspview---guid-and-download/blob/master/Tansit&remote.md)
+#### 四 [防火墙问题](http://10.158.134.250/shiyf/laspview---guid-and-download/blob/master/%23firewall.md)
 
   
   
 
-# 1. 概述与安装
+# 一 概述与安装
 LaspView目前分为三个部分：
 * 本地端/Laspview.exe
 * 中转端/TransitServer.py
 * 远程端/TransitServer.py  
 
-## a.本地端Laspview.exe
+## 1.本地端Laspview.exe
 本地端使用Unity3D编写，提供了分子结构的**本地渲染演示、动画及编辑**  
 仅本地端需要下载在个人电脑上，双击```LaspView.exe```即可运行程序，应可以看到默认打开的文件  
 请尝试鼠标右键拖动旋转、中键拖动平移等操作是否顺畅
 
-## b.中转端TransitServer.py
+## 2.中转端TransitServer.py
 出于种种考虑，在<kbd>node1</kbd>上架了一个中转服务器进行**文件转发**。
 整体上是两个包含简单协程的服务端，使用asyncio编写，支持并发  
 目录在<kbd>node1</kbd>```/home/LaspViewTransit/```下  
 > 应该还算稳定，一般不用管，~~死了喊我~~  
 
-## c.远程端Easy.py
+## 3.远程端Easy.py
 在Shell中，使用使用命令行参数控制**发送文件、接收文件**
 目录在```/home9/shiyf/bin/Easy.py```，建议```cp```或者```ln -s```至自己的的目录中
 ```
