@@ -83,5 +83,14 @@ cp succeed: 91990-0328073607.arc
 All file in template is cleared
 ```
 
+
+> **远程端发送文件到本地端的流程:**
+>  
+> <img src="http://10.158.134.250/shiyf/laspview---guid-and-download//raw/master/Assets/laspview_1.PNG" width="60%">  
+>   
+> **本地端发送文件到远程端的流程:**  
+>   
+> <img src="http://10.158.134.250/shiyf/laspview---guid-and-download//raw/master/Assets/laspview_2.PNG" width="60%">  
+
 以上
 > <img src="http://10.158.134.250/shiyf/laspview---guid-and-download//raw/master/Assets/ququ.jpeg" width="20%">  
