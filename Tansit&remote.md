@@ -4,12 +4,35 @@
 #### 3. [中转端TransitServer.py+远程端Easy.py使用指南](http://10.158.134.250/shiyf/laspview---guid-and-download/blob/master/Tansit&remote.md)
 #### 4. [遭遇防火墙问题](http://10.158.134.250/shiyf/laspview---guid-and-download/blob/master/%23firewall.md)
 
-# 3. 中转端TransitServer.py+远程端Easy.py使用指南
-## 中转端TransitServer.py
-> 整体上不用管，可跳过 ~~（但愿，出问题喊我）~~
+
+|  按钮         |   效果      |
+|  :----:       | :----:    |
+|  LocalIP      | 本地IP，启动时自动读取一次    |
+| ServerIP      |   node1 IP   |
+|CheckLocalIP   |  IP更改后需要更新本地IP，常见于VPN断了重连|
+|SendLocalIP    |  将本地IP发送给中转端|
+|SendStructure  |  将当前帧的结构发送给中转端|
+
+# 三. 网络通信部分  
+
+## 1. 本地端
+如需使用网络通信部分，请先在本地端```LaspView.exe```所在目录中修改```LaspViewConsole.log```中的```user```
+```
+user=shiyf
+```
+
+## 2. 中转端
+出于种种考虑，在<kbd>node1</kbd>上架了一个中转服务器进行文件转发。文件流的传输如：  
+* <kbd>工作目录</kbd>发送至<kbd>本地</kbd>:
+    * <kbd>工作目录</kbd>```Easy.py best.arc``` -> <kbd>node1</kbd>的内存 -> <kbd>本地</kbd> ```Temp``` 目录 -> LaspView读取  
+* <kbd>本地</kbd>发送至<kbd>工作目录</kbd>:
+    * <kbd>本地</kbd>-><kbd>node1</kbd> ```Temp```目录-> <kbd>工作目录</kbd>```Easy.py -cl``` -> <kbd>工作目录</kbd>  
+<br></br>
+
+中转端的启动、停止基本不用管，可跳过 ~~出问题喊我~~
 
 > ### 启动
-> 登录node1并```cd /home/LaspViewTransit/```，使用```nohup```启动，已经写在job.sh内，执行以下命令即可:
+> 登录node1并```cd /home/LaspViewTransit/```，```nohup```启动已经写在job.sh内，执行以下命令即可:
 > ```Bash
 > [shiyf@node1 LaspViewTransit]$ ./job.sh
 > ```
