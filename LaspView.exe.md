@@ -23,7 +23,7 @@
 
 > 鼠标左键单击为选中球体/碰撞器，框选为选中框内球心，拾取方式略有不同  
 > 待添加功能包括：超胞、Ctrl+Z等、改元素等
-<img src="http://10.158.134.250/shiyf/laspview---guid-and-download//raw/master/Assets/laspview_3.PNG" width="40%">   
+<img src="http://10.158.134.250/shiyf/laspview---guid-and-download//raw/master/Assets/laspview_3.PNG" width="55%">   
 
 ## 2. 菜单栏
 ### 左侧
