@@ -2,7 +2,7 @@
 LaspView是LASP程序包配套的分子结构可视化工具，主要使用Unity程序及部分python编写，主要特性包括：  
 * 轻量化的3D分子结构演示、编辑  
 * 同一*.arc文件中多个结构的切换
-* 通过远程服务器的命令行发送文件到本地演示或接收文件  
+* 通过远程服务器的命令行，发送文件到本地并演示  
 
 目前仅支持LASP使用的*.arc格式或Material Studio使用的*.car格式
 >使用这种标签的内容可跳过  
@@ -24,15 +24,14 @@ LaspView目前分为三个部分：
 * 中转端/TransitServer.py
 * 远程端/TransitServer.py  
 
-### o. 安装太长不看版:
-* 改```allkey.log```里的```user```
-* ```cp Eas.py 自己目录```
-* 改```Easy.py```中的```USER```
-
+### 0. 安装太长不看版:
+* ```/home9/shiyf/LaspViewDownload/``中下载最新版本LaspView
+* 改```laspview allkey.log```里的```user```
+* ```cp /home9/shiyf/bin/Easy.py 自己的PATH目录```
 
 ### a.本地端Laspview.exe
-**本地端提供了3D分子结构的渲染本**  
-仅本地端需要安装在个人主机上，点击链接下载最新版本  
+**本地端提供了3D分子结构的渲染演示及编辑**  
+仅本地端需要安装在个人电脑上，  
 解压程序包后，请打开```allkey.log```文件:
 ```
 remote_ip=10.158.134.241
