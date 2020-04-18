@@ -22,13 +22,6 @@ user=shiyf
 ```
 
 ## 2. 中转端
-出于种种考虑，在<kbd>node1</kbd>上架了一个中转服务器进行文件转发。文件流的传输如：  
-* <kbd>工作目录</kbd>发送至<kbd>本地</kbd>:
-    * <kbd>工作目录</kbd>```Easy.py best.arc``` -> <kbd>node1</kbd>的内存 -> <kbd>本地</kbd> ```Temp``` 目录 -> LaspView读取  
-* <kbd>本地</kbd>发送至<kbd>工作目录</kbd>:
-    * <kbd>本地</kbd>-><kbd>node1</kbd> ```Temp```目录-> <kbd>工作目录</kbd>```Easy.py -cl``` -> <kbd>工作目录</kbd>  
-<br></br>
-
 中转端的启动、停止基本不用管，可跳过 ~~出问题喊我~~
 
 > ### 启动
