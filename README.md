@@ -29,27 +29,34 @@ LaspView目前分为三个部分：
 * 远程端/TransitServer.py  
 
 ## a.本地端Laspview.exe
-**本地端提供了3D分子结构的本地渲染演示、动画及编辑**  
+本地端使用Unity3D编写，提供了分子结构的**本地渲染演示、动画及编辑**  
 仅本地端需要下载在个人电脑上，双击```LaspView.exe```即可运行程序，应可以看到默认打开的文件  
 请尝试鼠标右键拖动旋转、中键拖动平移等操作是否顺畅
 
-
 ## b.中转端TransitServer.py
-出于种种考虑，在<kbd>node1</kbd>上架了一个中转服务器进行文件转发。
+出于种种考虑，在<kbd>node1</kbd>上架了一个中转服务器进行**文件转发**。
 整体上是两个包含简单协程的服务端，使用asyncio编写，支持并发  
 目录在<kbd>node1</kbd>```/home/LaspViewTransit/```下  
-文件流的传输如下：  
-* <kbd>工作目录</kbd>发送至<kbd>本地</kbd>:
-    * <kbd>工作目录</kbd>```Easy.py best.arc``` -> <kbd>node1</kbd>的内存 -> <kbd>本地</kbd> ```Temp``` 目录 -> LaspView读取  
-* <kbd>本地</kbd>发送至<kbd>工作目录</kbd>:
-    * <kbd>本地</kbd>-><kbd>node1</kbd> ```Temp```目录-> <kbd>工作目录</kbd>```Easy.py -cl``` -> <kbd>工作目录</kbd>  
-<br></br>
 > 应该还算稳定，一般不用管，~~死了喊我~~  
 
-
 ## c.远程端Easy.py
-使用命令行参数控制发送文件、接收文件、管理中转临时目录```node1:/home/LaspViewTransit/Temp/$USER```等  
-目录在```/home9/shiyf/bin/Easy.py```，建议cp至自己的.bashrc中的目录中
+在Shell中，使用使用命令行参数控制**发送文件、接收文件**
+目录在```/home9/shiyf/bin/Easy.py```，建议```cp```或者```ln -s```至自己的的目录中
 ```
 cp /home9/shiyf/bin/Easy.py /home2/$USER/bin
 ```
+正确配置且防火墙无碍后，在LaspView界面中开启监听，并在Shell的<kbd>工作目录</kbd> 使用如下命令，即可在LaspView中演示结构：
+```
+Easy.py best.arc
+```
+在LaspView界面中发送结构，并在Shell的<kbd>工作目录</kbd> 使用如下命令，即可将结构发送至<kbd>工作目录</kbd>：
+```
+Easy.py -cl
+```
+
+
+> 文件流的传输如下：  
+> * <kbd>工作目录</kbd>发送至<kbd>本地</kbd>:
+>    * <kbd>工作目录</kbd>```Easy.py best.arc``` -> <kbd>node1</kbd>的内存 -> <kbd>本地</kbd> ```Temp``` 目录 -> LaspView读取  
+> * <kbd>本地</kbd>发送至<kbd>工作目录</kbd>:
+>     * <kbd>本地</kbd>-><kbd>node1</kbd> ```Temp```目录-> <kbd>工作目录</kbd>```Easy.py -cl``` -> <kbd>工作目录</kbd>  
