@@ -4,7 +4,7 @@
 #### 3. [中转端TransitServer.py+远程端Easy.py使用指南](http://10.158.134.250/shiyf/laspview---guid-and-download/blob/master/Tansit&remote.md)
 #### 4. [遭遇防火墙问题](http://10.158.134.250/shiyf/laspview---guid-and-download/blob/master/%23firewall.md)
 
-# 三. 网络通信部分  
+# 三 网络通信部分使用指南  
 ## 1. 使用指南
 ### 1) 配置用户
 如需使用网络通信部分，请先在本地端目录中修改```LaspViewConsole.log```中的```user```，使其与服务器上的用户名相同，如
