@@ -47,53 +47,52 @@ ln -s /home9/shiyf/bin/Easy.py /home2/$USER/bin
 以上即基本的文件传输操作。
 <br></br><br></br>
 ## 2. 详细内容
-这一部分将详细介绍一些参数和其他选项，类似于手册。实际上```Easy.py -h```亦有一部分帮助内容
-### 1). 本地端
+这一部分将详细介绍一些参数和其他选项，类似于手册。 
+其中，只有第三部分 <b >3) 远程端 </b> 介绍Easy.py的部分可能相对实用，看那个就好  
+实际上```Easy.py -h```亦有一部分帮助内容
+### 1) 本地端
 Server面板的内容如下  
 
 |  按钮         |   效果      |
 |  :----:       | :----:    |
 |  LocalIP      |  本地IP，启动时自动读取一次 |
-| ServerIP      |   <kbd>node1</kbd> IP   |
-|CheckLocalIP   |  IP更改后需要更新本地IP，常见于VPN断了重连以后|
+| ServerIP      |   node1 IP    |
+|CheckLocalIP   |  IP更改后需要更新本地IP，VPN断了重连以后需要使用|
 |StartListening |  开启监听，允许接收结构 |
+|StopListening |  开启监听后出现，关闭监听|
 |SendLocalIP    |  将本地IP发送给中转端 |
 |SendStructure  |  将当前帧的结构发送给中转端 |
 
-### 2. 中转端
+### 2) 中转端
 中转端的启动、停止基本不用管， ~~出问题喊我~~
 
-> ### 启动
-> 登录node1并```cd /home/LaspViewTransit/```，```nohup```启动已经写在job.sh内，执行以下命令即可:
-> ```Bash
-> [shiyf@node1 LaspViewTransit]$ ./job.sh
-> ```
-> ### 关闭
-> ##### 硬杀
-> 需要启动进程的用户或root来杀
-> 首先:
-> ```Bash
-> [shiyf@node1 LaspViewTransit]$ netstat -lp | grep python
-> ```
-> 或：
-> ```Bash
-> [shiyf@node1 LaspViewTransit]$ ps | grep python
-> ```
-> 得到PID， 比如```1553```，再
-> ```Bash
-> [shiyf@node1 LaspViewTransit]$ kill -9 1553
-> ```
-> 即可杀掉
-> ##### 软杀
-> 无需登录node1， 使用Easy.py, 假使Easy.py已在$PATH中
-> ```Bash
-> [shiyf@storage4 dir]$ Easy.py -kill
-> ```
-> 即会发送信号令TransitServer.py自杀
+###### 启动
+登录node1并```cd /home/LaspViewTransit/```，```nohup```启动已经写在job.sh内，执行以下命令即可:
+```
+[shiyf@node1 LaspViewTransit]$ ./job.sh
+```
+###### 硬杀
+需要启动进程的用户或root来杀, 首先获得进程PID:
+```Bash
+[shiyf@node1 LaspViewTransit]$ netstat -lp | grep python
+ ```
+ 或：
+```Bash
+[shiyf@node1 LaspViewTransit]$ ps | grep python
+ ```
+得到PID如```1553```，再杀掉
+```Bash
+[shiyf@node1 LaspViewTransit]$ kill -9 1553
+```
 
-## 远程端Easy.py
-包含了一个和中转端通信的client，发送并接收信息。默认Easy.py已在$PATH中
+###### 软杀
+无需登录node1， 使用Easy.py：
+```Bash
+[shiyf@storage4 dir]$ Easy.py -kill
+```
+即会发送信号令TransitServer.py自杀
 
+## 3. 远程端Easy.py
 
 可使用```Easy.py```的```-ls```/```--list```参数检查临时目录下的文件:
 ```Bash
