@@ -5,7 +5,7 @@
 #### 4. [遭遇防火墙问题](http://10.158.134.250/shiyf/laspview---guid-and-download/blob/master/%23firewall.md)
 
 
-# 2. 本地端LaspView.exe使用指南
+# 二、 本地端LaspView使用指南
 
 ## 控制
 > 基本与MS一致  
@@ -35,6 +35,7 @@
 2. File：  
     - 打开文件  
     - 保存当前结构  
+    - Windows支持将arc文件拖入窗口以打开文件
 3. Display：
     - （施工中）  
 4. Edit：  
