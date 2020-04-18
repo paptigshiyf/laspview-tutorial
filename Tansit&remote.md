@@ -55,13 +55,13 @@ Server面板的内容如下
 
 |  按钮         |   效果      |
 |  :----:       | :----:    |
-|  LocalIP      |  本地IP，启动时自动读取一次 |
-| ServerIP      |   node1 IP    |
-|CheckLocalIP   |  IP更改后需要更新本地IP，VPN断了重连以后需要使用|
-|StartListening |  开启监听，允许接收结构 |
-|StopListening |  开启监听后出现，关闭监听|
-|SendLocalIP    |  将本地IP发送给中转端 |
-|SendStructure  |  将当前帧的结构发送给中转端 |
+|  Local IP      |  本地IP，启动时自动读取一次 |
+| Server IP      |   node1 IP    |
+|Check Local IP   |  IP更改后需要更新本地IP，VPN断了重连以后需要使用|
+|Start Listening |  开启监听，允许接收结构 |
+|Stop Listening |  开启监听后出现，关闭监听|
+|Send Local IP    |  将本地IP发送给中转端 |
+|Send Structure  |  将当前帧的结构发送给中转端 |
 
 ### 2) 中转端
 中转端的启动、停止基本不用管， ~~出问题喊我~~
@@ -93,31 +93,28 @@ Server面板的内容如下
 即会发送信号令TransitServer.py自杀
 
 ## 3. 远程端Easy.py
+除了--user以外，Easy.py每次运行都只能使用一个参数，当使用多个参数时只认一个  
 
-可使用```Easy.py```的```-ls```/```--list```参数检查临时目录下的文件:
-```Bash
-[shiyf@storage4 dir]$ Easy.py -ls
-91990-0328073607.arc   23087-0328071510.arc   36959-0328071510.arc
-```
-可使用```Easy.py```的```-cp```/```--copy```参数拷贝文件至当前目录  
-```Bash
-[shiyf@storage4 dir]$ Easy.py -cp 91990-0328073607.arc
-cp succeed: 91990-0328073607.arc
-```
-可使用```Easy.py```的```-clear```/```--clear```清理临时目录```/template/$USER/```
-```Bash
-[shiyf@storage4 dir]$ Easy.py -clear
-All file in template is cleared
-```
+|  命令行参数  |   例子      | 效果|
+|  :----:      | ----   |----   |
+| -s / --send  | ```Easy.py -s 1.arc [2.arc]``` | 将文件发送到本地，支持多个文件同时发送|
+|              | ```Easy.py 1.arc```| 没有使用可选参数时，默认为发送文件|
+| -ls / --list | ```Easy.py -ls```| 列出用户的临时目录下的文件 |
+| -cl / --copylatest | ```Easy.py -cl```| 拉取临时目录下最新的一个文件到本地 |
+| -cp / --copy | ```Easy.py -cp 91990-0328073607.arc``` | 拉取临时目录下的特定文件到本地，支持同时拉取多个文件|
+|              | ```Easy.py -cp 9```  | 可以使用python风格的正则表达式(实际是re.match的patten)，拉取文件到当前目录|
+| -clear       | ```Easy.py -clear``` | 清理删除用户的临时目录下的所有文件 |
+| -kill        | ```Easy.py -kill```  | 令中转端TransitServer自杀|
+| -u / --user  | ```Easy.py -user zpliu -s 1.arc``` | 变更用户名，向其他用户的本地端发送1.arc |
 
 
 > **远程端发送文件到本地端的流程:**
 >  
-> <img src="http://10.158.134.250/shiyf/laspview---guid-and-download//raw/master/Assets/laspview_1.PNG" width="60%">  
+> <img src="http://10.158.134.250/shiyf/laspview---guid-and-download//raw/master/Assets/laspview_1.PNG" width="40%">  
 >   
 > **本地端发送文件到远程端的流程:**  
 >   
-> <img src="http://10.158.134.250/shiyf/laspview---guid-and-download//raw/master/Assets/laspview_2.PNG" width="60%">  
+> <img src="http://10.158.134.250/shiyf/laspview---guid-and-download//raw/master/Assets/laspview_2.PNG" width="40%">  
 
 以上
 > <img src="http://10.158.134.250/shiyf/laspview---guid-and-download//raw/master/Assets/ququ.jpeg" width="20%">  
