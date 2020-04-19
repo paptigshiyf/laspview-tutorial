@@ -1,10 +1,10 @@
 # 目录
 #### 一、 [概述与安装](http://10.158.134.250/shiyf/laspview---guid-and-download/edit/master/README.md)
-#### 二、 [本地端LaspView使用指南](http://10.158.134.250/shiyf/laspview---guid-and-download/blob/master/LaspView.exe.md)
-#### 三、 [网络通信部分使用指南](http://10.158.134.250/shiyf/laspview---guid-and-download/blob/master/Tansit&remote.md)
+#### 二、 [本地端LaspView](http://10.158.134.250/shiyf/laspview---guid-and-download/blob/master/LaspView.exe.md)
+#### 三、 [网络通信部分](http://10.158.134.250/shiyf/laspview---guid-and-download/blob/master/Tansit&remote.md)
 #### 四、 [防火墙问题](http://10.158.134.250/shiyf/laspview---guid-and-download/blob/master/firewall.md)
 <br></br>
-# 二、 本地端LaspView使用指南
+# 二、 本地端LaspView
 
 ## 1. 控制
 > 基本与MS一致  
