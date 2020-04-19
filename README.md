@@ -41,7 +41,7 @@ LaspView目前分为三个部分：
 
 ## 3.远程端Easy.py
 在使用EasyConnect等校园局域网VPN后，在Shell中，使用使用命令行参数控制**发送文件、接收文件**  
-Easy.py目录在```/home9/shiyf/bin/Easy.py```，建议```cp```或者```ln -s```至自己的的目录中
+```Easy.py```目录在```/home9/shiyf/bin/Easy.py```，建议```cp```或者```ln -s```至自己的的目录中
 ```
 cp /home9/shiyf/bin/Easy.py /home2/$USER/bin
 ```
