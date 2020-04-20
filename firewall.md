@@ -32,7 +32,7 @@
 * 类型：端口  >     TCP，允许9540端口  
 <img src="http://10.158.134.250/shiyf/laspview---guid-and-download//raw/master/Assets/firewall_3.png" width="40%">   <br></br>
 <img src="http://10.158.134.250/shiyf/laspview---guid-and-download//raw/master/Assets/firewall_4.png" width="40%">   <br></br>
-* 设置名称（任意，如LaspView）> 完成
+* 设置名称（任意，如LaspView）> 完成  
 <img src="http://10.158.134.250/shiyf/laspview---guid-and-download//raw/master/Assets/firewall_5.png" width="40%">   <br></br>
 
 如果仍不能解决，请呼叫shiyf售后
