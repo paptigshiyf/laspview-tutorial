@@ -5,7 +5,7 @@ LaspView是LASP程序包配套的分子结构可视化工具，主要使用Unity
 * 通过远程服务器的命令行，发送文件到本地并演示  
 * 发送文件到远程服务器，再使用命令行拉取到当前目录
 
-目前,*仅有Windows版本*。文件格式仅支持LASP使用的*.arc格式或Material Studio使用的*.car格式
+目前,<b>*仅有Windows版本*</b>。文件格式仅支持LASP使用的*.arc格式或Material Studio使用的*.car格式
 >使用这种标签的内容可跳过  
 >项目源码参见 [此处](http://10.158.134.250/shiyf/laspview)，加入项目后才能看见源码，请喊我
 
