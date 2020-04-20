@@ -7,6 +7,9 @@
 # 四、如果遭遇防火墙问题
 在本地端LaspView第一次使用Start Listening打开监听的时候，若跳出“是否允许LaspView使用网络”之类的窗口，并允许之，应不会有防火墙问题 
 
-<img src="http://10.158.134.250/shiyf/laspview---guid-and-download/raw/master/Assets/firewall_3.PNG" width="70%">   
+<img src="http://10.158.134.250/shiyf/laspview---guid-and-download//raw/master/Assets/firewall_1.png" width="40%"> 
+<img src="http://10.158.134.250/shiyf/laspview---guid-and-download//raw/master/Assets/firewall_1.png" width="40%"> 
+
+
 
 若不幸地无法通过，请呼叫shiyf。
