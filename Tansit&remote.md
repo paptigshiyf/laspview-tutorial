@@ -60,8 +60,8 @@ Server面板的内容如下
 |Check Local IP   |  IP更改后需要更新本地IP，VPN断了重连以后需要使用|
 |Start Listening |  开启监听，允许接收结构 |
 |Stop Listening |  开启监听后出现，关闭监听|
-|Send Local IP    |  将本地IP发送给中转端 |
-|Send Structure  |  将当前帧的结构发送给中转端 |
+|Send Local IP    |  空 |
+|Send Structure  |  空 |
 
 ### 2) 中转端
 中转端的启动、停止基本不用管， ~~出问题喊我~~
