@@ -34,6 +34,7 @@
 <img src="http://10.158.134.250/shiyf/laspview---guid-and-download//raw/master/Assets/firewall_4.png" width="40%">   <br></br>
 * 设置名称（任意，如LaspView）> 完成  
 <img src="http://10.158.134.250/shiyf/laspview---guid-and-download//raw/master/Assets/firewall_5.png" width="40%">   <br></br>
-* 最后，请检查是否已经允许了该规则(入站规则名称前有绿勾)，如未允许规则，请右键 > 属性 > 允许连接
+* 最后，请检查是否已经允许了该规则(入站规则名称前有绿勾)，如未允许规则，请右键 > 属性 > 允许连接  
+* > 感谢cdx提醒！
 * <img src="http://10.158.134.250/shiyf/laspview---guid-and-download//raw/master/Assets/firewall_5.png" width="40%"> 
 如果仍不能解决，请呼叫shiyf售后
