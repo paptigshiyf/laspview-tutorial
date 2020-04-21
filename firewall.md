@@ -7,7 +7,7 @@
 # 四、如果遭遇防火墙问题
 #### 1. 正常情况
 > 一般本地接收结构可能遭遇防火墙问题，本地发送结构应该问题不大  
-> 欢迎直接呼叫shiyf售后
+> 热烈欢迎直接呼叫shiyf售后
 
 在本地端LaspView第一次使用Start Listening打开监听的时候，若跳出“是否允许LaspView使用网络”之类的窗口，并允许之，应不会有防火墙问题  
 如果仍然无法正常接收```Easy.py -s best.arc```发来的结构，请首先检查网络状况：
@@ -34,5 +34,6 @@
 <img src="http://10.158.134.250/shiyf/laspview---guid-and-download//raw/master/Assets/firewall_4.png" width="40%">   <br></br>
 * 设置名称（任意，如LaspView）> 完成  
 <img src="http://10.158.134.250/shiyf/laspview---guid-and-download//raw/master/Assets/firewall_5.png" width="40%">   <br></br>
-
+* 最后，请检查是否已经允许了该规则(入站规则名称前有绿勾)，如未允许规则，请右键 > 属性 > 允许连接
+* <img src="http://10.158.134.250/shiyf/laspview---guid-and-download//raw/master/Assets/firewall_5.png" width="40%"> 
 如果仍不能解决，请呼叫shiyf售后
