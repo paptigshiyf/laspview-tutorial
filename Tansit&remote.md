@@ -11,9 +11,13 @@
 ```
 user=$USER
 ```
-并且，将```Easy.py```复制```cp```或者链接```ln -s```到自己的$PATH目录下，source shiyf也行啦
+并且，将```Easy.py```复制```cp```到自己的$PATH目录下
 ```
-ln -s /home9/shiyf/bin/Easy.py /home2/$USER/bin
+cp /home9/shiyf/bin/Easy.py /home2/$USER/bin
+```
+并且更改位于```Easy.py```文件头部的USER变量，使其与服务器上的用户名相同:
+```
+USER = shiyf
 ```
 ### 2) 远程发送文件到本地
 * <b>LaspView.exe: <kbd>Server</kbd>面板 点击<kbd>Send Local IP</kbd></b>  
