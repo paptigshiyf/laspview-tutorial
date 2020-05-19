@@ -7,22 +7,20 @@
 # 三、网络通信部分 
 ## 1. 使用指南
 ### 1) 配置用户
-如需使用网络通信部分，请先在本地端目录中修改```LaspViewConsole.log```中的```user```，使其与服务器上的用户名相同，如
+如需使用网络通信部分，请修改```LaspViewConsole.log```，在压缩文件中已经设置了该文件的链接，双击即可
+修改其中的```user```，使其与服务器上的用户名相同，如
 ```
 user=$USER
 ```
-并且，将```Easy.py```复制```cp```到自己的$PATH目录下
+将```Easy.py```加入自己的$PATH目录，一般应已加入。如未找到该文件，请```cp```到自己的目录
 ```
 cp /home9/shiyf/bin/Easy.py /home2/$USER/bin
 ```
-并且更改位于```Easy.py```文件头部的USER变量，使其与服务器上的用户名相同:
-```
-USER = shiyf
-```
+> 现已无需手动修改Easy.py中的user，仅需修改LaspViewConsole.log中的user
+
 ### 2) 远程发送文件到本地
-* <b>LaspView.exe: <kbd>Server</kbd>面板 点击<kbd>Send Local IP</kbd></b>  
-    - 本地端发送IP给中转端，使中转端知晓本地端的IP地址
-    - 如未断网，操作一次即可
+* <b>LaspView.exe: 点击<kbd>Server</kbd>打开Server面板
+
 * <b>LaspView.exe: <kbd>Server</kbd>面板 点击<kbd>Start Listening</kbd></b> 
     - 开启本地端的监听
     - 如未断网，操作一次即可
@@ -37,7 +35,7 @@ USER = shiyf
 >   - 请中止Easy.py并检查网络状况,比如是否曾发送本地IP，是否已经开启监听  
 >   - 其他意外情况请参见 防火墙设置
 >
-> 目前的python3.6，我没有找到设置连接超时上限的参数，默认的链接超时为1min，可能1min后才会报```Connect call failed```
+> 目前使用的python3.6，我没有找到设置连接超时上限的参数，默认的链接超时为1min，可能1min后才会报```Connect call failed```
 
 ### 3) 本地发送结构到远程
 * <b>LaspView.exe: <kbd>Server</kbd>面板 点击<kbd>Send Structure</kbd></b> 
@@ -57,17 +55,16 @@ USER = shiyf
 ### 1) 本地端
 Server面板的内容如下  
 
-|  按钮         |   效果      |
+|  按钮         |   说明      |
 |  :----:       | :----:    |
+|   Server Btn  | 菜单栏的Server按钮，点击时将自动从DNS和ipconfig读取本机ip，并Send Local IP| 
 |  Local IP      |  本地IP，启动时自动读取一次 |
 | Server IP      |   node1 IP    |
-|Check Local IP   |  IP更改后需要更新本地IP，VPN断了重连以后需要使用|
-|Start Listening |  开启监听，允许接收结构 |
 |Stop Listening |  开启监听后出现，关闭监听|
-|Send Local IP    |  将本机的IP发送给中转端，并让中转端记录 |
+|Start Listening |  开启监听，允许接收结构 |
+|Send Local IP    |  将本机的IP发送给中转端，让中转端记录 |
 |Send Structure  |  将当前帧的结构发送到远程 |
-|Send lasp.in | 空|
-|Edit lasp.in| 空|
+
 
 ### 2) 中转端
 中转端的启动、停止基本不用管， ~~出问题喊我~~
