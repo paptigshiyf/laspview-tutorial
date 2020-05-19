@@ -16,9 +16,21 @@ __本地端下载: ```/home9/shiyf/LaspViewDownload/```内有最新版本__
 # 更新
 
 #### 2020/05/19 Version 0.11
-* 整合了Server面板，现在点击```Server```+```Start Listening```即可
-* 增加了Ctrl + Z / Escape 的 撤回 功能
-* 
+
+* Display面板
+    - 基本完成，可以调整球棍模型的参数、显示多个周期、修改背景
+* Server面板
+    - 进行了整合 现在点击```Server```+```Start Listening```即可
+* Edit面板
+    - 现在无需进入Edit模式即可编辑结构
+    - 修改了旋转的算法，现在基本是准确的
+    - 增加了Ctrl + Z / Escape 的 撤回 功能
+    - 增加了添加原子、编辑晶胞参数、超胞的功能
+* 其他
+    - 移除了本地Lasp计算的部分
+    - 性能优化：某些情况下将停止渲染
+    - 性能优化：减缓大量占用内存的问题
+    - 但是由于Mono虚拟机的限制，真正释放内存仍需要重启程序
 
 # 目录
 #### 一、 [概述与安装](http://10.158.134.250/shiyf/laspview---guid-and-download/edit/master/README.md)
