@@ -56,15 +56,15 @@ LaspView目前分为三个部分：
 出于种种考虑，在<kbd>node1</kbd>上架了一个中转服务器进行**文件转发**。
 整体上是两个包含简单协程的服务端，使用asyncio编写，支持并发  
 目录在<kbd>node1</kbd>```/home/LaspViewTransit/```下  
-> 应该还算稳定，一般不用管，~~死了喊我~~  
+> 目前比较稳定，一般不用管，~~死了喊我~~  
 
 ## 3.远程端Easy.py
 在使用EasyConnect等校园局域网VPN后，在Shell中，使用使用命令行参数控制**发送文件、接收文件**  
-```Easy.py```目录在```/home9/shiyf/bin/Easy.py```，建议```cp```或者```ln -s```至自己的的目录中
+```Easy.py```目录加入商老师的.bashrc中，一般无需操作即可使用。如不存在，请将其加入自己的PATH目录
 ```
 cp /home9/shiyf/bin/Easy.py /home2/$USER/bin
 ```
-<b>正确配置</b>且防火墙无碍后，在LaspView界面中开启监听，并在Shell的<kbd>工作目录</kbd> 使用如下命令，即可在LaspView中演示结构：
+<b>正确配置</b>且防火墙无碍后，在LaspView Server面板中开启监听，并在Shell的<kbd>工作目录</kbd> 使用如下命令，即可在LaspView中演示结构：
 ```
 Easy.py best.arc
 ```
