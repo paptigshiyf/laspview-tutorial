@@ -120,5 +120,3 @@ Server面板的内容如下
 >   
 > <img src="http://10.158.134.250/shiyf/laspview---guid-and-download//raw/master/Assets/laspview_2.PNG" width="40%">  
 
-以上
-> <img src="http://10.158.134.250/shiyf/laspview---guid-and-download//raw/master/Assets/ququ.jpeg" width="20%">  
