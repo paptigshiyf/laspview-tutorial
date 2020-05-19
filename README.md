@@ -59,7 +59,7 @@ LaspView目前分为三个部分：
 
 ## 3.远程端Easy.py
 在使用EasyConnect等校园局域网VPN后，在Shell中，使用使用命令行参数控制**发送文件、接收文件**  
-```Easy.py```目录加入商老师的.bashrc中，一般无需操作即可使用。如不存在，请将其加入自己的PATH目录
+```Easy.py```已经加入商老师的.bashrc中，一般无需操作即可使用。如不存在，请将其加入自己的PATH目录
 ```
 cp /home9/shiyf/bin/Easy.py /home2/$USER/bin
 ```
