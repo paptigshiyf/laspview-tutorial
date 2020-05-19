@@ -54,13 +54,13 @@ LaspView目前分为三个部分：
 
 ## 2.中转端TransitServer.py
 出于种种考虑，在<kbd>node1</kbd>上架了一个中转服务器进行**文件转发**。
-整体上是两个包含简单协程的服务端，使用asyncio编写，支持并发  
+整体上是两个包含简单协程的服务端，使用```asyncio```编写，支持并发  
 目录在<kbd>node1</kbd>```/home/LaspViewTransit/```下  
 > 目前比较稳定，一般不用管，~~死了喊我~~  
 
 ## 3.远程端Easy.py
 在使用EasyConnect等校园局域网VPN后，在Shell中，使用使用命令行参数控制**发送文件、接收文件**  
-```Easy.py```已经加入商老师的.bashrc中，一般无需操作即可使用。如不存在，请将其加入自己的PATH目录
+```Easy.py```已经加入商老师的```.bashrc```中，一般无需操作即可使用。如不存在，请将其加入自己的```PATH```目录
 ```
 cp /home9/shiyf/bin/Easy.py /home2/$USER/bin
 ```
