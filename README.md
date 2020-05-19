@@ -13,6 +13,12 @@ LaspView是LASP程序包配套的分子结构可视化工具，主要使用Unity
 # 下载
 __本地端下载: ```/home9/shiyf/LaspViewDownload/```内有最新版本__
 
+# 更新
+
+#### 2020/05/19 Version 0.11
+* 整合了Server面板，现在点击```Server```+```Start Listening```即可
+* 增加了Ctrl + Z / Escape 的 撤回 功能
+* 
 
 # 目录
 #### 一、 [概述与安装](http://10.158.134.250/shiyf/laspview---guid-and-download/edit/master/README.md)
